@@ -6,7 +6,7 @@ const Statistic = ({ good, neutral, bad, total, positiveFeedback }) => {
     { statElem: neutral, title: 'Neutral' },
     { statElem: bad, title: 'Bad' },
     { statElem: total, title: 'Total feedbacks' },
-    { statElem: positiveFeedback, title: 'positiveFeedback' },
+    { statElem: positiveFeedback, title: 'Positive feedback' },
   ];
 
   return (
@@ -14,11 +14,9 @@ const Statistic = ({ good, neutral, bad, total, positiveFeedback }) => {
       {statArray.map(({ statElem, title }) => (
         <div key={title}>
           <p>
-            {title}:{' '}
+            {title}:{''}
             <span>
-              {title !== 'Positive feedbacks'
-                ? statElem
-                : positiveFeedback + '%'}
+              {title !== 'Positive feedback' ? statElem : statElem + '%'}
             </span>
           </p>
         </div>
